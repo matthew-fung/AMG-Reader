@@ -1,0 +1,38 @@
+<!--
+  Generated template for the BlogDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+    <ion-navbar>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <div class="imageContainer">
+        <img src="{{post.image_url}}" alt="">
+    </div>
+
+    <h1 class="title">{{post.title}}</h1>
+
+    <div style="text-align: center; opacity: 0.5;">{{post.author_name || "Anonymous"}} | {{post.created | date}}</div>
+
+    <div class="content" Markdown [innerHTML]="post.content | safeHtml">
+    </div>
+
+</ion-content>
+
+<ion-footer no-border>
+
+    <ion-toolbar>
+
+        <ion-icon class="share-button" ios="ios-share-outline"
+                  md="md-share"
+                  (click)="share()"></ion-icon>
+
+    </ion-toolbar>
+
+</ion-footer>

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Blog Categories</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+ <ion-card *ngFor = "let category of categories" (click)="goToBlogList(category)">
+
+        <img src="{{category.image_url}}"/>
+        <!-- Uncomment this when we have images provided from API -->
+        <!-- <img src="{{category.image_url}}"/> -->
+        <div class="card-title">{{category.title}}</div>
+        <div class="card-subtitle">{{category.description}}</div>
+  </ion-card>
+
+</ion-content>

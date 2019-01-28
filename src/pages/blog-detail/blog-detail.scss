@@ -1,0 +1,38 @@
+page-blog-detail {
+
+  .header .toolbar-background {
+    background: transparent;
+    border-bottom: none;
+  }
+
+  .imageContainer {
+    width: 100%;
+    height: 38vh;
+    text-align: center;
+
+    img {
+      height: 100%;
+      max-width: none;
+    }
+  }
+
+  .title {
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .content {
+    padding: 5px 20px;
+  }
+
+  .footer .toolbar .icon {
+    font-size: 2em;
+    padding-left: 10px;
+  }
+
+  .share-button {
+    color: color($colors, primary);
+  }
+
+}

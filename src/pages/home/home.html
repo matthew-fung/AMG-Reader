@@ -1,0 +1,102 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon id="menu-button" name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            <img id="logo" height="40" src="assets/imgs/amglogo.png"/>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="grey-background">
+
+    <div class="divider-title">Latest Blogs</div>
+
+    <div class="main-item custom-card blog-item latest-post"
+         (click)="viewPost(model.blogPosts.first)"
+         [style.background]="'url(' + model.blogPosts.first.image_url + ')'"
+         [style.background-size]="'cover'"
+         *ngIf="model.blogPosts.first != null">
+
+        <div class="content-container">
+            <div class="content">
+                <div class="title">{{model.blogPosts.first.title}}</div>
+                <div class="metadata">
+                    <br>
+                    <div>Written by {{model.blogPosts.first.author_name || "Anonymous"}}</div>
+                    <span>{{model.blogPosts.first.category_title}} | {{model.blogPosts.first.created | date}}</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="secondary-item custom-card blog-item"
+         (click)="viewPost(post)"
+         [style.background]="'url(' + post.image_url + ')'"
+         [style.background-size]="'cover'"
+         *ngFor="let post of model.blogPosts.rest">
+
+        <div class="content-container">
+            <div class="content">
+                <div class="secondary-title">{{post.title}}</div>
+                <br>
+                <div class="secondary-metadata">
+                    <div>{{post.category_title}}</div>
+                    <div>{{post.created | date}}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="divider-title">Latest Photography Blogs</div>
+
+    <div class="main-item custom-card blog-item"
+         [style.background]="'url(' + model.photoPosts.first.image_url + ')'"
+         [style.background-size]="'cover'"
+         *ngIf="model.photoPosts.first"
+         (click)="viewPost(model.photoPosts.first)">
+
+        <div class="content-container">
+            <div class="content">
+                <div class="title">{{model.photoPosts.first.title}}</div>
+                <div class="metadata">
+                    <div>{{model.photoPosts.first.created | date}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="secondary-item custom-card blog-item"
+         *ngFor="let photoPost of model.photoPosts.rest"
+         [style.background]="'url(' + photoPost.image_url + ')'"
+         [style.background-size]="'cover'"
+         (click)="viewPost(photoPost)">
+        <!--<img src="{{photoPost.image_url}}">-->
+        <div class="content-container">
+            <div class="content">
+                <div class="title">{{photoPost.title}}</div>
+                <div class="metadata">
+                    <div>{{photoPost.created | date}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider-title">Latest Magazine Issue</div>
+
+    <div class="magazine-issue"
+         *ngIf="model.issues.first"
+         (click)="viewIssue(model.issues.first)">
+
+        <div class="content-container">
+            <div class="content">
+                <img src="{{model.issues.first.image_url}}" alt="" style="width: 100%">
+                <div class="title">{{model.issues.first.title}}</div>
+            </div>
+        </div>
+    </div>
+
+</ion-content>

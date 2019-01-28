@@ -1,0 +1,62 @@
+<!--
+  Generated template for the BlogListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{model.title}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="grey-background">
+
+    <!--<div class="postPreviewContainer" *ngFor="let post of model.posts">-->
+    <!--<ion-card (click)="viewPost(post)">-->
+    <!--<div class="content image">-->
+    <!--<img src="{{post.image_url}}" alt="" style="width: 100%">-->
+    <!--</div>-->
+    <!--<div class="content info">-->
+    <!---->
+
+    <!--<div class="title">{{post.title}}</div>-->
+    <!--<div class="metadata">{{post.category_title}} | {{post.created | date}}</div>-->
+    <!---->
+    <!--</div>-->
+    <!--</ion-card>-->
+    <!--<br>-->
+    <!--</div>-->
+
+    <div class="blog-item"
+         (click)="viewPost(post)"
+         [style.background]="'url(' + post.image_url + ')'"
+         [style.background-size]="'cover'"
+         *ngFor="let post of model.posts">
+
+        <div class="content-container">
+            <div class="content">
+                <div class="title">{{post.title}}</div>
+                <div class="metadata">
+                    <div>{{post.category_title}}</div>
+                    <div>{{post.created | date}}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <ion-infinite-scroll (ionInfinite)="loadNextPosts($event)" *ngIf="model.nextPage">
+        <ion-infinite-scroll-content loadingSpinner="bubbles"
+                                     loadingText="Loading more data...">
+
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>
