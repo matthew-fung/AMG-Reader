@@ -1,26 +1,18 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# AMG Reader
+## Description
 
-## How to use this template
+The official Atrium Media Group Reader App!
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+Read our latest blogs and magazine issues by downloading on iOS or Android:
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+iOS: https://itunes.apple.com/ca/app/amg-reader/id1341252680?mt=8
 
-### With the Ionic CLI:
+Android: https://play.google.com/store/apps/details?id=com.amg.androidapp&hl=en_US
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+### Screenshots:
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start mySideMenu sidemenu
-```
+![Splash screen](splash.png)
+![Blogs](blogs.png)
+![Blogs Detail](blog-detail.png)
 
-Then, to run it, cd into `mySideMenu` and run:
-
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
-
-Substitute ios for android if not on a Mac.
 
